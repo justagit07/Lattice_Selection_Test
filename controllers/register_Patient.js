@@ -1,4 +1,6 @@
 import Patient from "../models/patient";
+import Hospital from "../models/hospital";
+import mongoose from "mongoose";
 
 const validateName = (name) => {
   if (!name) {
@@ -59,7 +61,7 @@ const register_Patient = async (req, res) => {
       .json({ errors: ["Request body is missing or empty"] });
   }
 
-  const { name, address, email, phoneNumber, password, patientPhoto } =
+  const { name, address, email, phoneNumber, password, patientPhoto, hospitalName } =
     req.body;
 
   const errors = [
@@ -76,6 +78,10 @@ const register_Patient = async (req, res) => {
   }
 
   try {
+
+    const findHospital= await Hospital.find({name:hospitalName});
+    const hospitalId= findHospital._id;
+
     const newPatient = new Patient({
       name,
       address,
@@ -83,6 +89,7 @@ const register_Patient = async (req, res) => {
       phoneNumber,
       password,
       patientPhoto,
+      hospitalId
     });
     await newPatient.save();
     res.status(201).send(newPatient);

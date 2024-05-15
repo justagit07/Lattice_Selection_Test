@@ -15,6 +15,12 @@ const hospital_schema = mongoose.Schema({
       ref: "Psychiatrist",
     },
   ],
+  Patients: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Patients",
+    },
+  ],
 });
 
 const Hospital = mongoose.model("Hospital", hospital_schema);

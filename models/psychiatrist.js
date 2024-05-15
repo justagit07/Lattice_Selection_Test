@@ -5,12 +5,19 @@ const psychiatrist_schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  
-  hospital: {
+
+  hospitalId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Hospital",
-    required: true,
+    ref: 'Hospital',
+    required: true
   },
+
+  Patients: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Patient",
+    },
+  ],
 });
 
 const Psychiatrist = mongoose.model("Psychiatrist", psychiatrist_schema);
