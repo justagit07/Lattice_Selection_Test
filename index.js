@@ -5,7 +5,7 @@ dotenv.config();
 
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import patientRoutes from "./routes/Allroutes";
+import Allroutes from "./routes/Allroutes";
 
 const app = express();
 app.use(express.json());
@@ -26,7 +26,7 @@ dbconnection();
 
 // http://localhost:3000/api/patients/register is the route which work to register patient
 
-app.use("/api", patientRoutes);
+app.use("/api", Allroutes);
 
 // creating server of express
 
