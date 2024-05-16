@@ -26,6 +26,7 @@ dbconnection();
 
 // http://localhost:3000/api/patients/register is the route which work to register patient
 
+
 app.use("/api", Allroutes);
 
 // creating server of express

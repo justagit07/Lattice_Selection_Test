@@ -3,6 +3,8 @@ import Hospital from "../models/hospital.js";
 import Psychiatrist from "../models/psychiatrist.js";
 
 
+//****************** VALIDATION FUNCTIONS ************/
+
 const validateName = (name) => {
   if (!name) {
     return "Name is required";
@@ -53,17 +55,28 @@ const validatePatientPhoto = (patientPhoto) => {
   return null;
 };
 
+//*******************************  Task - 1 *********************************************************** */
+
+
 // Patient registration route with custom validation
 
 const register_Patient = async (req, res) => {
+
+    // checking wheather the frontend pass the information or not in request body
   if (!req.body || Object.keys(req.body).length === 0) {
     return res
       .status(400)
       .json({ errors: ["Request body is missing or empty"] });
   }
 
+
+  // DESTRUCTING THE REQ.BODY
+
   const { name, address, email, phoneNumber, password, patientPhoto, hospitalName, psychiatristName } =
     req.body;
+
+
+    //  VALIDATION CHECK  OF FRONTEND DATA
 
   const errors = [
     validateName(name),
@@ -80,20 +93,31 @@ const register_Patient = async (req, res) => {
 
   try {
 
+   
+    // finding the hospital Id so that we will add it in the patient database 
+
     const  hospital= await Hospital.findOne({name:hospitalName})
+    
     const psychiatrist= await Psychiatrist.findOne({name:psychiatristName})
+    if(!psychiatrist || !hospital)
+     {
+        return res.status(400).json({ error: 'Psychiatrist and hospital is Not in the System please enter the valid Psychiatrist or hospital name  ' });
+
+     }
       const hospitalId= hospital._id;
       const psychiatristId = psychiatrist._id;
-
-      console.log('this is hospitalId', hospitalId);
-      console.log('this is hospitalId', psychiatrist.hospitalId);
       
+   // comparing the psychiatrist id and hospital id that will insure that that the pyschiatrist is working for your hospital or not
+   // because if the psychiatrist diffrent and your hospital is diffrent which could not be possible as your hospital should have your psychiatrist working with them
 
       if (psychiatrist.hospitalId.toString() !== hospitalId.toString()) {
         console.log('ok');
         
         return res.status(400).json({ error: 'Selected psychiatrist does not belong to the specified hospital' });
       }
+//****************** CREATING NEW PATIENTS AFTER VALIDATING ************************************************ */
+     
+   // CREATING NEW PATIENT
 
     const newPatient = new Patient({
       name,
@@ -107,26 +131,29 @@ const register_Patient = async (req, res) => {
     });
     await newPatient.save();
 
-    // adding the patient to the hospital schema also for futhur use 
+    //*************************  CRUD OPERATION  ***************************************************/
 
-
+  // updating the hospital database and adding patient in there database 
     const adding_patient= await  Hospital.findByIdAndUpdate(
         hospitalId,
         { $push: { patients: newPatient._id } },
       );
+      console.log('hnji');
+      
+  // UPDATING THE PSYCHIATRIST DATABASE BY ADDING THE PATIENT IN IT 
     const addingPatient_intoPsychiatrist= await  Psychiatrist.findByIdAndUpdate(
         psychiatristId,
         { $push: { patients: newPatient._id } },
       );
 
-      console.log('this is the added patient', adding_patient);
-      console.log('this is the added patient', addingPatient_intoPsychiatrist);
-
-      
-
+  // SENDING RESPONSE TO THE FRONTEND  .............
 
     res.status(201).send(newPatient);
-  } catch (error) {
+
+  }
+   catch (error) {
+
+     // SENDING ERROR TO THE FRONTEND IF ABOVE CASE WILL CREATE ANY ERROR
     res.status(400).send(error);
   }
 };
