@@ -14,10 +14,8 @@ const patient_Schema = mongoose.Schema({
 
   email: {
     type: String,
-    unique: true,
     required: true,
   },
-
   phoneNumber: {
     type: String,
     required: true,
@@ -37,6 +35,11 @@ const patient_Schema = mongoose.Schema({
   hospitalId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Hospital',
+    required: true
+  },
+  psychiatristId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Psychiatrist',
     required: true
   }
 });

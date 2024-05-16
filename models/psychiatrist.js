@@ -12,7 +12,7 @@ const psychiatrist_schema = mongoose.Schema({
     required: true
   },
 
-  Patients: [
+  patients: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Patient",

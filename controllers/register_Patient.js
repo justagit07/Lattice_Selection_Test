@@ -1,6 +1,7 @@
-import Patient from "../models/patient";
-import Hospital from "../models/hospital";
-import mongoose from "mongoose";
+import Patient from "../models/patient.js";
+import Hospital from "../models/hospital.js";
+import Psychiatrist from "../models/psychiatrist.js";
+
 
 const validateName = (name) => {
   if (!name) {
@@ -61,7 +62,7 @@ const register_Patient = async (req, res) => {
       .json({ errors: ["Request body is missing or empty"] });
   }
 
-  const { name, address, email, phoneNumber, password, patientPhoto, hospitalName } =
+  const { name, address, email, phoneNumber, password, patientPhoto, hospitalName, psychiatristName } =
     req.body;
 
   const errors = [
@@ -79,8 +80,20 @@ const register_Patient = async (req, res) => {
 
   try {
 
-    const findHospital= await Hospital.find({name:hospitalName});
-    const hospitalId= findHospital._id;
+    const  hospital= await Hospital.findOne({name:hospitalName})
+    const psychiatrist= await Psychiatrist.findOne({name:psychiatristName})
+      const hospitalId= hospital._id;
+      const psychiatristId = psychiatrist._id;
+
+      console.log('this is hospitalId', hospitalId);
+      console.log('this is hospitalId', psychiatrist.hospitalId);
+      
+
+      if (psychiatrist.hospitalId.toString() !== hospitalId.toString()) {
+        console.log('ok');
+        
+        return res.status(400).json({ error: 'Selected psychiatrist does not belong to the specified hospital' });
+      }
 
     const newPatient = new Patient({
       name,
@@ -89,9 +102,29 @@ const register_Patient = async (req, res) => {
       phoneNumber,
       password,
       patientPhoto,
-      hospitalId
+      hospitalId,
+      psychiatristId
     });
     await newPatient.save();
+
+    // adding the patient to the hospital schema also for futhur use 
+
+
+    const adding_patient= await  Hospital.findByIdAndUpdate(
+        hospitalId,
+        { $push: { patients: newPatient._id } },
+      );
+    const addingPatient_intoPsychiatrist= await  Psychiatrist.findByIdAndUpdate(
+        psychiatristId,
+        { $push: { patients: newPatient._id } },
+      );
+
+      console.log('this is the added patient', adding_patient);
+      console.log('this is the added patient', addingPatient_intoPsychiatrist);
+
+      
+
+
     res.status(201).send(newPatient);
   } catch (error) {
     res.status(400).send(error);

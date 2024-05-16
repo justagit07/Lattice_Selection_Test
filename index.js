@@ -5,7 +5,7 @@ dotenv.config();
 
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import Allroutes from "./routes/Allroutes";
+import Allroutes from "./routes/Allroutes.js";
 
 const app = express();
 app.use(express.json());

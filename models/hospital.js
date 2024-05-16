@@ -15,10 +15,10 @@ const hospital_schema = mongoose.Schema({
       ref: "Psychiatrist",
     },
   ],
-  Patients: [
+  patients: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Patients",
+      ref: "Patient",
     },
   ],
 });
