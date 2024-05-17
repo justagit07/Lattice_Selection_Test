@@ -1,0 +1,99 @@
+{
+
+    /*  HOSPITAL  SCHEMA  YOU CAN ALSO CHECK SCHEMA IN THE MODELS SECTIONS  OF MY CODE BASE */
+    
+    "Hospital": {
+        
+      "name": {
+        "type": "String",
+        "required": true
+      },
+      "address": {
+        "type": "String",
+        "required": true
+      },
+      "psychiatrists": [
+        {
+          "type": "ObjectId",
+          "ref": "Psychiatrist"
+        }
+      ],
+      "patients": [
+        {
+          "type": "ObjectId",
+          "ref": "Patient"
+        }
+      ]
+    },
+
+
+ /*  PSYCHIATRIST   SCHEMA  */
+    
+
+
+    "Psychiatrist": {
+      "name": {
+        "type": "String",
+        "required": true
+      },
+      "hospitalId": {
+        "type": "ObjectId",
+        "ref": "Hospital",
+        "required": true
+      },
+      "patients": [
+        {
+          "type": "ObjectId",
+          "ref": "Patient"
+        }
+      ]
+    },
+
+
+ /*  PATIENT SCHEMA  */
+    
+
+    "Patient": {
+
+      "name": {
+        "type": "String",
+        "required": true
+      },
+      "address": {
+        "type": "String",
+        "required": true,
+        "minlength": 10
+      },
+      "email": {
+        "type": "String",
+        "required": true
+      },
+      "phoneNumber": {
+        "type": "String",
+        "required": true
+      },
+      "password": {
+        "type": "String",
+        "required": true,
+        "minlength": 8,
+        "maxlength": 15
+      },
+      "patientPhoto": {
+        "type": "String",
+        "required": true
+      },
+      "hospitalId": {
+        "type": "ObjectId",
+        "ref": "Hospital",
+        "required": true
+      },
+      "psychiatristId": {
+        "type": "ObjectId",
+        "ref": "Psychiatrist",
+        "required": true
+      }
+      
+      
+    }
+  }
+  

@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"d19635341f794036b58e1369d7435701","collectionName":"psychiatrists","type":"collection"}

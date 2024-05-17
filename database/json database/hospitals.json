@@ -1,0 +1,270 @@
+[{
+  "_id": {
+    "$oid": "6645fc01dec08c1fe05f984b"
+  },
+  "name": "Apollo Hospitals",
+  "address": "Sector-4 Gurgaon Haryana India",
+  "psychiatrists": [
+    {
+      "$oid": "66460dfbdec08c1fe05f9854"
+    },
+    {
+      "$oid": "66460e0edec08c1fe05f9858"
+    },
+    {
+      "$oid": "66460e17dec08c1fe05f985c"
+    },
+    {
+      "$oid": "66460e1ddec08c1fe05f9860"
+    },
+    {
+      "$oid": "66460e53dec08c1fe05f9864"
+    }
+  ],
+  "patients": [
+    {
+      "$oid": "664610e4dec08c1fe05f98b8"
+    },
+    {
+      "$oid": "66461107dec08c1fe05f98be"
+    },
+    {
+      "$oid": "66461679bb99a0ebc2bb14f3"
+    },
+    {
+      "$oid": "66461692bb99a0ebc2bb14f9"
+    },
+    {
+      "$oid": "664616abbb99a0ebc2bb14ff"
+    },
+    {
+      "$oid": "6646f5d36e55818601d26f3f"
+    },
+    {
+      "$oid": "66470fa2c64e09d4fc792df8"
+    },
+    {
+      "$oid": "66470fa7c64e09d4fc792dfe"
+    },
+    {
+      "$oid": "66470fadc64e09d4fc792e04"
+    },
+    {
+      "$oid": "66470fc3c64e09d4fc792e0a"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6645fcd6dec08c1fe05f984d"
+  },
+  "name": "Jawaharlal Nehru Medical College and Hospital",
+  "address": "Sector-53 Delhi India",
+  "psychiatrists": [
+    {
+      "$oid": "66460e73dec08c1fe05f9868"
+    },
+    {
+      "$oid": "66460e86dec08c1fe05f986c"
+    },
+    {
+      "$oid": "66460ea1dec08c1fe05f9870"
+    },
+    {
+      "$oid": "66460ea8dec08c1fe05f9874"
+    },
+    {
+      "$oid": "66460eb8dec08c1fe05f9878"
+    }
+  ],
+  "patients": [
+    {
+      "$oid": "66461173dec08c1fe05f98c4"
+    },
+    {
+      "$oid": "66461193dec08c1fe05f98ca"
+    },
+    {
+      "$oid": "664611aedec08c1fe05f98d0"
+    },
+    {
+      "$oid": "664611d4dec08c1fe05f98d6"
+    },
+    {
+      "$oid": "664611f6dec08c1fe05f98dc"
+    },
+    {
+      "$oid": "6646120ddec08c1fe05f98e2"
+    },
+    {
+      "$oid": "664710d9c64e09d4fc792e42"
+    },
+    {
+      "$oid": "664710e2c64e09d4fc792e48"
+    },
+    {
+      "$oid": "664710f6c64e09d4fc792e4e"
+    },
+    {
+      "$oid": "664710fcc64e09d4fc792e54"
+    },
+    {
+      "$oid": "6647110bc64e09d4fc792e5a"
+    },
+    {
+      "$oid": "66471120c64e09d4fc792e60"
+    },
+    {
+      "$oid": "66471128c64e09d4fc792e66"
+    },
+    {
+      "$oid": "66471130c64e09d4fc792e6c"
+    },
+    {
+      "$oid": "66471138c64e09d4fc792e72"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66460b79dec08c1fe05f984f"
+  },
+  "name": "Indira Gandhi Institute of Medical Sciences (IGIMS)",
+  "address": "Sector-20 Noida India",
+  "psychiatrists": [
+    {
+      "$oid": "66460f24dec08c1fe05f987d"
+    },
+    {
+      "$oid": "66460f36dec08c1fe05f9881"
+    },
+    {
+      "$oid": "66460f3bdec08c1fe05f9885"
+    },
+    {
+      "$oid": "66460f45dec08c1fe05f9889"
+    },
+    {
+      "$oid": "66460f4bdec08c1fe05f988d"
+    }
+  ],
+  "patients": [
+    {
+      "$oid": "6646126cdec08c1fe05f98e8"
+    },
+    {
+      "$oid": "6646127ddec08c1fe05f98ee"
+    },
+    {
+      "$oid": "66461291dec08c1fe05f98f4"
+    },
+    {
+      "$oid": "664613bebb99a0ebc2bb14c9"
+    },
+    {
+      "$oid": "664613d2bb99a0ebc2bb14cf"
+    },
+    {
+      "$oid": "66471173c64e09d4fc792e78"
+    },
+    {
+      "$oid": "66471178c64e09d4fc792e7e"
+    },
+    {
+      "$oid": "6647117ec64e09d4fc792e84"
+    },
+    {
+      "$oid": "6647118bc64e09d4fc792e8a"
+    },
+    {
+      "$oid": "66471191c64e09d4fc792e90"
+    },
+    {
+      "$oid": "66471196c64e09d4fc792e96"
+    },
+    {
+      "$oid": "6647119fc64e09d4fc792e9c"
+    },
+    {
+      "$oid": "664711a5c64e09d4fc792ea2"
+    },
+    {
+      "$oid": "664711aac64e09d4fc792ea8"
+    },
+    {
+      "$oid": "664711b1c64e09d4fc792eae"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66460b91dec08c1fe05f9851"
+  },
+  "name": "AIIMS - All India Institute Of Medical Science",
+  "address": "Delhi  India",
+  "psychiatrists": [
+    {
+      "$oid": "66460f63dec08c1fe05f9891"
+    },
+    {
+      "$oid": "66460f6adec08c1fe05f9895"
+    },
+    {
+      "$oid": "66460f73dec08c1fe05f9899"
+    },
+    {
+      "$oid": "66460f79dec08c1fe05f989d"
+    },
+    {
+      "$oid": "66460f7fdec08c1fe05f98a1"
+    },
+    {
+      "$oid": "6646f0fcab135489f720548f"
+    }
+  ],
+  "patients": [
+    {
+      "$oid": "664613fdbb99a0ebc2bb14d5"
+    },
+    {
+      "$oid": "6646140abb99a0ebc2bb14db"
+    },
+    {
+      "$oid": "6646141ebb99a0ebc2bb14e1"
+    },
+    {
+      "$oid": "6646142dbb99a0ebc2bb14e7"
+    },
+    {
+      "$oid": "6646143cbb99a0ebc2bb14ed"
+    },
+    {
+      "$oid": "6647102cc64e09d4fc792e12"
+    },
+    {
+      "$oid": "66471036c64e09d4fc792e18"
+    },
+    {
+      "$oid": "6647103dc64e09d4fc792e1e"
+    },
+    {
+      "$oid": "66471047c64e09d4fc792e24"
+    },
+    {
+      "$oid": "66471053c64e09d4fc792e2a"
+    },
+    {
+      "$oid": "6647105dc64e09d4fc792e30"
+    },
+    {
+      "$oid": "66471083c64e09d4fc792e36"
+    },
+    {
+      "$oid": "66471089c64e09d4fc792e3c"
+    }
+  ],
+  "__v": 0
+}]
