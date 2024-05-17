@@ -251,6 +251,168 @@ The below link are the POSTMAN link to check the api.
 `Fetch Hospital Details` : https://speeding-trinity-601338.postman.co/workspace/Backend-learning~e0e2a590-b942-432e-af5e-755b4db78e35/request/32662180-36642265-8fa1-44d5-ba7b-8e0faa48787e?ctx=documentation
 <br>
 
+***
+<br>
+<br>
+
+***
+
+## SCHEMA
+
+The below is the schema of the database 
+
+[schema.json](https://github.com/justagit07/Lattice_Selection_Test/files/15345267/schema.json){
+
+    /*  HOSPITAL  SCHEMA  YOU CAN ALSO CHECK SCHEMA IN THE MODELS SECTIONS  OF MY CODE BASE */
+    
+    "Hospital": {
+        
+      "name": {
+        "type": "String",
+        "required": true
+      },
+      "address": {
+        "type": "String",
+        "required": true
+      },
+      "psychiatrists": [
+        {
+          "type": "ObjectId",
+          "ref": "Psychiatrist"
+        }
+      ],
+      "patients": [
+        {
+          "type": "ObjectId",
+          "ref": "Patient"
+        }
+      ]
+    },
+
+
+ /*  PSYCHIATRIST   SCHEMA  */
+    
+
+
+    "Psychiatrist": {
+      "name": {
+        "type": "String",
+        "required": true
+      },
+      "hospitalId": {
+        "type": "ObjectId",
+        "ref": "Hospital",
+        "required": true
+      },
+      "patients": [
+        {
+          "type": "ObjectId",
+          "ref": "Patient"
+        }
+      ]
+    },
+
+
+ /*  PATIENT SCHEMA  */
+    
+
+    "Patient": {
+
+      "name": {
+        "type": "String",
+        "required": true
+      },
+      "address": {
+        "type": "String",
+        "required": true,
+        "minlength": 10
+      },
+      "email": {
+        "type": "String",
+        "required": true
+      },
+      "phoneNumber": {
+        "type": "String",
+        "required": true
+      },
+      "password": {
+        "type": "String",
+        "required": true,
+        "minlength": 8,
+        "maxlength": 15
+      },
+      "patientPhoto": {
+        "type": "String",
+        "required": true
+      },
+      "hospitalId": {
+        "type": "ObjectId",
+        "ref": "Hospital",
+        "required": true
+      },
+      "psychiatristId": {
+        "type": "ObjectId",
+        "ref": "Psychiatrist",
+        "required": true
+      }
+      
+      
+    }
+  }
+  
+***
+<br>
+<br>
+
+***
+
+## Major Libraries and Frameworks Used
+#### 1. Express
+Reason: Express is a fast, unopinionated, minimalist web framework for Node.js, making it ideal for building RESTful APIs quickly and efficiently.
+#### 2. Mongoose
+Reason: Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a straightforward, schema-based solution to model application data, with built-in type casting, validation, query building, and business logic hooks.
+#### 3. dotenv
+Reason: dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. This is essential for managing configuration and secrets separately from the codebase, enhancing security and flexibility.
+#### 4. body-parser
+Reason: body-parser is a middleware for parsing incoming request bodies in a middleware before your handlers, available under the req.body property. It's essential for handling POST requests in Express applications.
+#### 5. nodemon (Dev Dependency)
+Reason: nodemon is a utility that automatically restarts the node application when file changes in the directory are detected. This significantly improves the development workflow by eliminating the need to manually restart the server after every change.
+
+
+***
+<br>
+<br>
+
+***
+
+## Deployment
+1. Clone the Repository
+
+
+```bash
+git clone https://github.com/example/repo.git
+cd repo
+
+```
+2.Install Dependencies
+
+```bash
+npm install
+```
+3. Create a .env File
+
+
+```bash
+MONGO_URI=<your-mongodb-connection-string>
+PORT=3000
+```
+4. Start the Server
+
+
+```bash
+npm run dev
+```
+
 
 
 
