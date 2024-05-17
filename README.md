@@ -5,8 +5,80 @@ This document provides the details of the RESTful APIs designed for a platform w
 
 ## API Endpoints
 
+## 1. Register Hospital
+```
+POST /api/hospital/register
+```
+Description:This API registers a new hospital.
+
+
+
+## Request Body
+
+```
+{
+    "name":"AIIMS - All India Institute Of Medical Science",
+    "address":"Delhi  India"
+}
+```
+
+
+## Response:
+
+201 Created: Hospital registered successfully.
+ 400 Bad Request: Validation failed.
+
+```
+{
+    "message": "Hospital register Sucessfully",
+    "hospital_id": "6646ecba31614d1752464af5"
+}
+```
+<img width="885" alt="image" src="https://github.com/justagit07/Lattice_Selection_Test/assets/122598221/c697e7e8-0549-4a8a-ab40-3e147656756b">
+
+---
+---
+<br>
+
+## 2. Register Psychiatrist
+
+```
+POST /api/psychiatrist/register
+```
+Description: This API registers a new psychiatrist and associates them with a hospital.
+
+
+
+## Request Body
+
+```
+{
+    "name": "Dr. Deepak",
+    "hospitalName":"AIIMS - All India Institute Of Medical Science"
+}
+```
+
+## Response:
+
+201 Created: Psychiatrist registered successfully.
+ 400 Bad Request: Validation failed.
+
+```
+{
+    "message": "Psychiatrist is registred sucessfully",
+    "_id": "6646f0fcab135489f720548f"
+}
+```
+<img width="884" alt="image" src="https://github.com/justagit07/Lattice_Selection_Test/assets/122598221/a7d3c234-19dc-45b6-a007-18d25f233894">
+
+***
+***
+<br>
+
 
 ## 3.  Register New Patient
+
+****************** TASK - 1 ****************************
 
 ```
 POST /api/patients/register
@@ -47,7 +119,8 @@ Description: This API registers a new patient under a psychiatrist in a hospital
 
 ## Response:
 
-201 Created: Validation failed.
+201 Created:Patient registered successfully .
+
  400 Bad Request: Validation failed.
 
 ```
@@ -76,6 +149,8 @@ Description: This API registers a new patient under a psychiatrist in a hospital
 
 
 ## 4. Fetch Hospital Psychiatrists and Patient Details
+
+****************** TASK - 2 ****************************
 
 ```http
 GET /api/hospital/details
