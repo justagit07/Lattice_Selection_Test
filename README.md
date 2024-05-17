@@ -34,6 +34,8 @@ Description:This API registers a new hospital.
     "hospital_id": "6646ecba31614d1752464af5"
 }
 ```
+[Link to postman hospital registration]
+https://speeding-trinity-601338.postman.co/workspace/Backend-learning~e0e2a590-b942-432e-af5e-755b4db78e35/request/32662180-44b3bd53-4caf-4060-be31-8ef831a5d08a?ctx=documentation
 <img width="885" alt="image" src="https://github.com/justagit07/Lattice_Selection_Test/assets/122598221/c697e7e8-0549-4a8a-ab40-3e147656756b">
 
 ---
@@ -69,6 +71,8 @@ Description: This API registers a new psychiatrist and associates them with a ho
     "_id": "6646f0fcab135489f720548f"
 }
 ```
+[Link to postman Psychiatrist registration]
+https://speeding-trinity-601338.postman.co/workspace/Backend-learning~e0e2a590-b942-432e-af5e-755b4db78e35/request/32662180-8b545458-3035-401a-b3bb-ef0159b17d36?ctx=documentation
 <img width="884" alt="image" src="https://github.com/justagit07/Lattice_Selection_Test/assets/122598221/a7d3c234-19dc-45b6-a007-18d25f233894">
 
 ***
@@ -141,6 +145,8 @@ Description: This API registers a new patient under a psychiatrist in a hospital
     }
 }
 ```
+[Link to postman Patient registration]
+https://speeding-trinity-601338.postman.co/workspace/Backend-learning~e0e2a590-b942-432e-af5e-755b4db78e35/request/32662180-188abd20-1bda-4ea3-9e10-1f72b6a4a211?ctx=documentation
 <img width="600" alt="image" src="https://github.com/justagit07/Lattice_Selection_Test/assets/122598221/58396166-8313-4cb9-8039-b394f5446ba6">
 
 ---
@@ -215,7 +221,8 @@ Description: This API fetches all psychiatrists, their count, and patient detail
 }
 
 ```
-
+[Link to postman Fetch Details]
+https://speeding-trinity-601338.postman.co/workspace/Backend-learning~e0e2a590-b942-432e-af5e-755b4db78e35/request/32662180-36642265-8fa1-44d5-ba7b-8e0faa48787e?ctx=documentation
 <img width="874" alt="image" src="https://github.com/justagit07/Lattice_Selection_Test/assets/122598221/0b0fdb8b-f540-43a3-9264-aa39edc1dfee">
 
 ---
@@ -237,8 +244,13 @@ Below are the enviroment variable which should be placed inside the .env file
 
 The below link are the POSTMAN link to check the api.
 
-`API_KEY`
+`Patient Registration` :  https://speeding-trinity-601338.postman.co/workspace/Backend-learning~e0e2a590-b942-432e-af5e-755b4db78e35/request/32662180-188abd20-1bda-4ea3-9e10-1f72b6a4a211?ctx=documentation
+<br>
 
-`ANOTHER_API_KEY`
+<br>
+`Fetch Hospital Details` : https://speeding-trinity-601338.postman.co/workspace/Backend-learning~e0e2a590-b942-432e-af5e-755b4db78e35/request/32662180-36642265-8fa1-44d5-ba7b-8e0faa48787e?ctx=documentation
+<br>
+
+
 
 
